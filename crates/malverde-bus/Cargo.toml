@@ -1,0 +1,12 @@
+[package]
+name = "malverde-bus"
+version = "0.1.0"
+edition = "2021"
+description = "Event Bus system for Malverde framework."
+
+[dependencies]
+malverde-core = { path = "../malverde-core" }
+tokio = { version = "1.0", features = ["full"] }
+async-trait = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+tracing = "0.1"
