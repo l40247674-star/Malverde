@@ -1,0 +1,16 @@
+[package]
+name = "malverde-events"
+version = "0.1.0"
+edition = "2021"
+authors = ["wero"]
+description = "Event system for Malverde Core Framework"
+license = "MIT"
+
+[dependencies]
+malverde-core = { path = "../malverde-core" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+async-trait = "0.1"
+dashmap = "5.0"
