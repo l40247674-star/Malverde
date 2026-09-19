@@ -1,0 +1,31 @@
+[workspace]
+members = [
+    "crates/malverde-core",
+    "crates/malverde-bus",
+    "crates/malverde-storage",
+    "crates/malverde-job",
+    "crates/malverde-cli",
+    "crates/malverde-tui",
+    "crates/malverde-learning",
+    "crates/malverde-security",
+    "crates/malverde-knowledge",
+    "crates/malverde-memory",
+    "crates/malverde-events",
+    "crates/malverde-plugins",
+]
+resolver = "2"
+
+[workspace.dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+rusqlite = { version = "0.30", features = ["bundled", "fts5"] }
+clap = { version = "4.0", features = ["derive"] }
+crossterm = "0.27"
+tui-rs = "0.10"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1.0", features = ["v4"] }
+chrono = "0.4"
+async-trait = "0.1"
