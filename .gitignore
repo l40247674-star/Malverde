@@ -1,0 +1,4 @@
+/target
+.malverde-traces/
+*.db
+*.sqlite

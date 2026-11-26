@@ -1,0 +1,19 @@
+[package]
+name = "malverde-agent"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Loop agéntico de Malverde: planificar, actuar y observar con presupuesto, memoria, skills, subagentes y trazas."
+
+[dependencies]
+malverde-core = { workspace = true }
+malverde-provider = { workspace = true }
+malverde-tools = { workspace = true }
+malverde-memory = { workspace = true }
+malverde-skills = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+chrono = { workspace = true }

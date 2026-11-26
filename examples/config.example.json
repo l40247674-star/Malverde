@@ -1,0 +1,28 @@
+{
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "base_url": "https://api.openai.com/v1",
+  "api_key_env": "OPENAI_API_KEY",
+  "max_iterations": 90,
+  "temperature": 0.7,
+  "max_tokens": 4096,
+  "permission_mode": "ask",
+  "allow_list": [
+    "now",
+    "read_file",
+    "list_dir",
+    "search",
+    "remember",
+    "recall",
+    "forget"
+  ],
+  "disabled_tools": [],
+  "context_max_messages": 120,
+  "max_tool_output_chars": 20000,
+  "data_dir": "/home/tu-usuario/.malverde",
+  "working_dir": ".",
+  "skills_dirs": [],
+  "shell_timeout_secs": 120,
+  "identity_name": "Malverde",
+  "identity_prompt": "Prefiere respuestas en español y confirma antes de borrar archivos."
+}
