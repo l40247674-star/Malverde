@@ -1,0 +1,15 @@
+[package]
+name = "malverde-provider"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Abstracción de proveedores LLM para Malverde (compatible OpenAI, mock para tests)."
+
+[dependencies]
+malverde-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+ureq = { workspace = true }

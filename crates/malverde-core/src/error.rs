@@ -1,72 +1,73 @@
 use thiserror::Error;
 
+/// Error unificado del harness Malverde.
 #[derive(Debug, Error)]
 pub enum MalverdeError {
-    #[error("Storage error: {0}")]
-    StorageError(String),
-    #[error("Serialization error: {0}")]
-    SerializationError(String),
-    #[error("Configuration error: {0}")]
-    ConfigError(String),
-    #[error("Validation error: {0}")]
-    ValidationError(String),
-    #[error("Security error: {0}")]
-    SecurityError(String),
-    #[error("Plugin error: {0}")]
-    PluginError(String),
-    #[error("Job error: {0}")]
-    JobError(String),
-    #[error("Event error: {0}")]
-    EventError(String),
-    #[error("Memory error: {0}")]
-    MemoryError(String),
-    #[error("Learning error: {0}")]
-    LearningError(String),
-    #[error("Network error: {0}")]
-    NetworkError(String),
-    #[error("Filesystem error: {0}")]
-    FilesystemError(String),
-    #[error("Unknown error: {0}")]
+    #[error("error de configuración: {0}")]
+    Config(String),
+    #[error("error de almacenamiento: {0}")]
+    Storage(String),
+    #[error("error del proveedor LLM: {0}")]
+    Provider(String),
+    #[error("error de herramienta: {0}")]
+    Tool(String),
+    #[error("error del agente: {0}")]
+    Agent(String),
+    #[error("permiso denegado: {0}")]
+    Permission(String),
+    #[error("error de skills: {0}")]
+    Skill(String),
+    #[error("error del planificador: {0}")]
+    Scheduler(String),
+    #[error("error del gateway: {0}")]
+    Gateway(String),
+    #[error("error de E/S: {0}")]
+    Io(String),
+    #[error("error de serialización: {0}")]
+    Serialization(String),
+    #[error("validación fallida: {0}")]
+    Validation(String),
+    #[error("error desconocido: {0}")]
     Unknown(String),
 }
 
 impl MalverdeError {
-    pub fn storage(error: impl Into<String>) -> Self {
-        MalverdeError::StorageError(error.into())
+    pub fn config(msg: impl Into<String>) -> Self {
+        Self::Config(msg.into())
     }
-    pub fn serialization(error: impl Into<String>) -> Self {
-        MalverdeError::SerializationError(error.into())
+    pub fn storage(msg: impl Into<String>) -> Self {
+        Self::Storage(msg.into())
     }
-    pub fn config(error: impl Into<String>) -> Self {
-        MalverdeError::ConfigError(error.into())
+    pub fn provider(msg: impl Into<String>) -> Self {
+        Self::Provider(msg.into())
     }
-    pub fn validation(error: impl Into<String>) -> Self {
-        MalverdeError::ValidationError(error.into())
+    pub fn tool(msg: impl Into<String>) -> Self {
+        Self::Tool(msg.into())
     }
-    pub fn security(error: impl Into<String>) -> Self {
-        MalverdeError::SecurityError(error.into())
+    pub fn agent(msg: impl Into<String>) -> Self {
+        Self::Agent(msg.into())
     }
-    pub fn plugin(error: impl Into<String>) -> Self {
-        MalverdeError::PluginError(error.into())
+    pub fn permission(msg: impl Into<String>) -> Self {
+        Self::Permission(msg.into())
     }
-    pub fn job(error: impl Into<String>) -> Self {
-        MalverdeError::JobError(error.into())
+    pub fn skill(msg: impl Into<String>) -> Self {
+        Self::Skill(msg.into())
     }
-    pub fn event(error: impl Into<String>) -> Self {
-        MalverdeError::EventError(error.into())
+    pub fn scheduler(msg: impl Into<String>) -> Self {
+        Self::Scheduler(msg.into())
     }
-    pub fn memory(error: impl Into<String>) -> Self {
-        MalverdeError::MemoryError(error.into())
+    pub fn gateway(msg: impl Into<String>) -> Self {
+        Self::Gateway(msg.into())
     }
-    pub fn learning(error: impl Into<String>) -> Self {
-        MalverdeError::LearningError(error.into())
+    pub fn io(err: impl std::fmt::Display) -> Self {
+        Self::Io(err.to_string())
     }
-    pub fn network(error: impl Into<String>) -> Self {
-        MalverdeError::NetworkError(error.into())
+    pub fn serialization(msg: impl Into<String>) -> Self {
+        Self::Serialization(msg.into())
     }
-    pub fn filesystem(error: impl Into<String>) -> Self {
-        MalverdeError::FilesystemError(error.into())
+    pub fn validation(msg: impl Into<String>) -> Self {
+        Self::Validation(msg.into())
     }
 }
 
-pub type MalverdeResult<T> = Result<T, MalverdeError>;
+pub type Result<T> = std::result::Result<T, MalverdeError>;

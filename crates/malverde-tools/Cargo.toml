@@ -1,0 +1,17 @@
+[package]
+name = "malverde-tools"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Registro de herramientas, permisos y herramientas integradas de Malverde."
+
+[dependencies]
+malverde-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+ureq = { workspace = true }
+malverde-provider = { workspace = true }
+chrono = { workspace = true }

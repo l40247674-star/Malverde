@@ -1,18 +1,19 @@
 [package]
 name = "malverde-tui"
-version = "0.1.0"
-edition = "2021"
-authors = ["wero"]
-description = "Terminal UI for Malverde Core Framework"
-license = "MIT"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "TUI de chat para el harness Malverde."
 
 [dependencies]
-malverde-core = { path = "../malverde-core" }
-malverde-config = { path = "../malverde-config" }
-malverde-job = { path = "../malverde-job" }
-malverde-events = { path = "../malverde-events" }
-malverde-audit = { path = "../malverde-audit" }
-ratatui = "0.25"
-crossterm = "0.27"
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
+malverde-core = { workspace = true }
+malverde-provider = { workspace = true }
+malverde-tools = { workspace = true }
+malverde-memory = { workspace = true }
+malverde-agent = { workspace = true }
+
+ratatui = { workspace = true }
+crossterm = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }

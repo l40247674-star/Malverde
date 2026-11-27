@@ -1,0 +1,22 @@
+[package]
+name = "malverde-gateway"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Gateway de Malverde: adapta plataformas de mensajería (CLI, webhook loopback) al agente."
+
+[dependencies]
+malverde-core = { workspace = true }
+malverde-agent = { workspace = true }
+malverde-memory = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tiny_http = { workspace = true }
+tracing = { workspace = true }
+uuid = { workspace = true }
+
+[dev-dependencies]
+malverde-provider = { workspace = true }
+malverde-tools = { workspace = true }
+malverde-skills = { workspace = true }

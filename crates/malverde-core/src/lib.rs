@@ -1,12 +1,13 @@
 //! Malverde Core
-//! Core module for Malverde framework.
+//!
+//! Núcleo del harness: configuración, tipos compartidos, errores y logging.
 
 pub mod config;
 pub mod error;
-pub mod types;
 pub mod logging;
+pub mod types;
 
-pub use config::Config;
-pub use error::MalverdeError;
-pub use types::*;
-pub use logging::*;
+pub use config::{default_data_dir, Config, PermissionMode, PROVIDER_PRESETS};
+pub use error::{MalverdeError, Result};
+pub use logging::init_logging;
+pub use types::{MemoryFact, Message, Role, SessionId, SessionMeta, StopReason, ToolCall, TraceEvent, Usage};
